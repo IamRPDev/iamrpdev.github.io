@@ -5,47 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPDev | Security Analyst & Engineer</title>
     <style>
-        :root { --bg: #0d1117; --text: #c9d1d9; --accent: #58a6ff; --green: #3fb950; --border: #30363d; }
-        body { background: var(--bg); color: var(--text); font-family: 'Courier New', monospace; line-height: 1.6; margin: 0; padding: 40px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        h1 { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-        .terminal { background: #010409; padding: 20px; border: 1px solid var(--border); border-radius: 6px; margin: 20px 0; }
-        .prompt { color: var(--green); }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .card { border: 1px solid var(--border); padding: 15px; border-radius: 6px; background: #161b22; }
-        .nav { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
-        .nav a { color: var(--accent); margin-right: 20px; text-decoration: none; font-weight: bold; }
+        :root {
+            --bg-color: #0d1117;
+            --text-main: #c9d1d9;
+            --accent: #58a6ff;
+            --terminal-green: #3fb950;
+            --border: #30363d;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--text-main);
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+        }
+        .tagline {
+            color: var(--accent);
+            font-size: 1.2em;
+            margin: 0 0 10px 0;
+        }
+        .location {
+            color: #8b949e;
+            font-size: 0.9em;
+        }
+        h2 {
+            color: var(--terminal-green);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            background-color: #161b22;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+        .project-card p {
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .project-links a {
+            color: var(--terminal-green);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        .terminal-block {
+            background-color: #010409;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+        .prompt {
+            color: var(--terminal-green);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>RPDev // Intelligence Matrix</h1>
-        <div class="terminal">
-            <span class="prompt">root@RPDev:~#</span> cat /sys/philosophy<br>
-            > <strong>Security-First Architecture:</strong> Built into the bare metal.<br>
-            > <strong>Dismantle and Rebuild:</strong> Mechanical truth over abstraction.<br>
-            > <strong>First-Principles Efficiency:</strong> Sovereignty via hardware repurposing.
-        </div>
-        
-        <h2>Active Projects</h2>
-        <div class="grid">
-            <div class="card"><h3>Blackhole Webserver</h3><p>OpenWRT telemetric interception engine.</p></div>
-            <div class="card"><h3>LuCI App: Blackhole</h3><p>Modern Web GUI for Blackhole management.</p></div>
-            <div class="card"><h3>OpenWRT Custom Feed</h3><p>Automated package repository via GitHub Actions.</p></div>
+        <header>
+            <h1>RPDev <span style="color:#8b949e; font-size: 0.5em;">[IamRPDev]</span></h1>
+            <div class="tagline">Security Analyst | Engineer | Hardware Hacker</div>
+            <div class="location">Location: Cleveland, Ohio // Operating Environment: Linux & GrapheneOS</div>
+        </header>
+
+        <div class="terminal-block">
+            <span class="prompt">root@RPDev:~#</span> cat /sys/philosophy
+            <br>
+            > <strong>Security-First Architecture:</strong> Built into the bare metal, never a perimeter add-on.<br>
+            > <strong>Dismantle and Rebuild:</strong> Exploit and rebuild core mechanics. Prioritize bare-metal reality over commercial abstraction.<br>
+            > <strong>First-Principles Efficiency:</strong> Repurpose enterprise hardware to construct sovereign environments. Focus on Cost-to-Capability.<br>
+            > <strong>Bleeding-Edge Deployment:</strong> Extract maximum utility via experimental development-branch deployments across RF, embedded, and routing systems.
         </div>
 
-        <h2>Core Competencies</h2>
-        <ul>
-            <li>Bare-Metal Forensics & Exploitation</li>
-            <li>Software-Defined Radio (SDR) Intelligence</li>
-            <li>Infrastructure Hardening & IaC</li>
-            <li>Embedded Systems (ESP32/STM32)</li>
-        </ul>
+        <section>
+            <h2>Operational Background</h2>
+            <p>A cross-disciplinary synthesis of Security Analyst, Systems Administrator, and Hardware Technician with over two decades of applied experience across federal, municipal, and multinational corporate environments.</p>
+            <ul>
+                <li><strong>Enterprise & Federal Scale:</strong> Architected security infrastructure and managed compliance across environments exceeding 6,000 endpoints. Directed IT operations and established 24/7 server continuity for SMBs up to multinational firms.</li>
+                <li><strong>Disaster Recovery & Automation:</strong> Developed custom PowerShell and BASH automation to manage Active Directory, SCCM, and complex disaster recovery sequences across virtualization clusters (VMware, Hyper-V).</li>
+                <li><strong>Physical & RF Infrastructure:</strong> Hands-on electronic maintenance encompassing UHF radio networks, high-voltage control systems, and heavy data communication cabling.</li>
+                <li><strong>Systems & Protocols:</strong> Proficient across Windows/Linux architectures, SAN environments (EqualLogic, EMC VNX), and a veteran of early programming paradigms (C, C++, Java, Visual Basic).</li>
+            </ul>
+        </section>
 
-        <nav class="nav">
-            <a href="/hugo_main/">[ Portfolio Engine ]</a>
-            <a href="/mkdocs_wiki/">[ Technical Wiki ]</a>
-        </nav>
+        <section>
+            <h2>Security & Risk Architecture</h2>
+            <p>Acting as the primary security authority, transforming compliance requirements into technical reality.</p>
+            <ul>
+                <li><strong>InfoSec Leadership:</strong> Architected and administered production/development security infrastructures as a primary Information Security Officer. Navigated complex third-party audits and authored policies bridging compliance with industry best practices.</li>
+                <li><strong>Threat Modeling & Analytics:</strong> Functioned as a Network Security Analyst filtering massive datasets (e.g., Nessus vulnerability scans) to identify false positives, isolate actionable threats, and enforce rigorous patching baselines.</li>
+                <li><strong>Sovereign Privacy:</strong> Designing air-gapped, telemetry-free environments that protect operational sovereignty and mitigate data leakage at the bare-metal level.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>DevOps & Automation</h2>
+            <p>Bridging the gap between physical infrastructure and continuous deployment pipelines.</p>
+            <ul>
+                <li><strong>CI/CD & Cloud Workflows:</strong> Designing automated cross-compilation pipelines using GitHub Actions, Docker, and isolated build environments (e.g., OpenWRT SDKs).</li>
+                <li><strong>Infrastructure as Code (IaC):</strong> Scripting robust, reproducible infrastructure utilizing shell scripting, PowerShell, and native package managers.</li>
+                <li><strong>Automated Remediation:</strong> Engineering self-healing architectures and developing scripts to parse telemetry, force alignment, and orchestrate complex disaster recovery sequences without human intervention.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Core Competencies</h2>
+            <ul>
+                <li><strong>Offensive Security & Forensics:</strong> Bare-metal exploitation, DMA attacks, firmware reverse engineering, and infrastructure subversion.</li>
+                <li><strong>RF & Electronic Engineering:</strong> SDR protocol analysis (HackRF), high-voltage DC motor control, and custom embedded systems (ESP32/STM32).</li>
+                <li><strong>Infrastructure & Networking:</strong> Enterprise datacenter migrations, complex AD/DNS remediation, and OpenWRT ecosystem development.</li>
+                <li><strong>Physical Engineering:</strong> PACS bypass, architectural surveillance evasion, structural soundproofing, and advanced electrical grounding for RF.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Active Projects</h2>
+            <p>Recent developments focusing on self-sovereign telemetry interception and lightweight routing infrastructure.</p>
+            
+            <div class="project-card">
+                <h3>Blackhole Webserver</h3>
+                <p>A highly efficient, single-binary Go webserver designed for OpenWRT routers (ARM64/AMD64). It executes catch-all routing to intercept telemetric traffic, mirrors requested directory structures onto a local storage device, and serves a 1x1 tracking pixel (or simulated connectivity checks).</p>
+                <div class="project-links">
+                    <a href="https://github.com/IamRPDev/blackhole-server" target="_blank">[ GitHub Repository ]</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>LuCI App: Blackhole</h3>
+                <p>A modern, client-side rendered OpenWRT Web GUI module (LuCI) for managing the Blackhole server. Built using the latest JS view models and RPCD access control lists, allowing native router administration without CLI overhead.</p>
+                <div class="project-links">
+                    <a href="https://github.com/IamRPDev/luci-app-blackhole" target="_blank">[ GitHub Repository ]</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>OpenWRT Custom Feed</h3>
+                <p>An automated package repository containing `.apk` and `.ipk` OpenWRT installer packages for the Blackhole ecosystem. Maintained entirely via GitHub Actions leveraging the OpenWRT SDK Docker containers for automated cross-compilation.</p>
+                <div class="project-links">
+                    <a href="https://github.com/IamRPDev/openwrt-blackhole-feed" target="_blank">[ GitHub Repository ]</a>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
