@@ -1,0 +1,11 @@
+[
+    {"update_topic": {"title": "Re-evaluating Wiki and Documentation Infrastructure", "summary": "Evaluated MkDocs vs Hugo and decided on MkDocs with Material theme for wiki documentation."}},
+    {"update_topic": {"title": "Scaffolding the GitHub Pages Site", "summary": "Set up MkDocs, created proper directory structure, and implemented automation to generate profile from markdown."}},
+    {"update_topic": {"title": "Migrating to ProperDocs and Configuring Redirects", "summary": "Migrated from standard MkDocs to ProperDocs due to MkDocs 2.0 breaking changes. Configured mkdocs-redirects."}},
+    {"update_topic": {"title": "Defining the 'Bare Metal' Design System", "summary": "Created a central CSS theme for the Bare Metal aesthetic and applied it to the ProperDocs setup."}},
+    {"update_topic": {"title": "Creating Site Configuration Documentation", "summary": "Built config.md and compiled it to a private .source/config.html to securely store the CSS variables reference."}},
+    {"update_topic": {"title": "Analyzing Project Architecture", "summary": "Ran understand skill to generate a knowledge graph of the repository in .understand-anything/knowledge-graph.json"}},
+    {"update_topic": {"title": "Project Refactoring Complete", "summary": "Refactored all documentation pages using MkDocs Material admonitions and the Bare Metal terminal aesthetic."}},
+    {"update_topic": {"title": "Configuring GitHub Pages Deployment Workflow", "summary": "Created a GitHub Actions workflow to deploy the site from main as a static artifact. Used GitHub API to force build_type to workflow."}},
+    {"update_topic": {"title": "Meta-Optimizer: Refining Deployment Heuristics", "summary": "Updated global GEMINI.md memory with heuristics to use GitHub Actions for User Pages instead of gh-pages branch. Cleaned up legacy branches."}}
+]

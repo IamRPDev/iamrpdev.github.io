@@ -28,9 +28,15 @@ plugins:
 nav:
   - Home: index.md
   - About: about.md
-  - Security: security.md
-  - DevOps: devops.md
-  - Hardware: hardware.md
+  - Professional Expertise:
+    - Enterprise Security: experience/security.md
+    - Infrastructure & RF: experience/infrastructure.md
+    - Technical Training: experience/training.md
+    - Retro-Computing: experience/retro.md
+  - Technical Documentation:
+    - Security: security.md
+    - DevOps: devops.md
+    - Hardware: hardware.md
   - Projects: projects.md
   - Automated Profile: automated_profile.md
 
