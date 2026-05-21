@@ -9,13 +9,14 @@
 * **Operating Environments:** Linux (Mint XFCE, Debian, Fedora, Ubuntu) for low-overhead stability; GrapheneOS and custom ROMs for mobile telemetric sovereignty.
 
 ## 2. Professional Scale & Environments
-*This section defines the scale and context of the user's enterprise experience without identifying specific organizations or roles.*
-* **Foundational Training:** Formal education in Computer Networking Systems with early, dedicated programming training in C, C++, Java, and Visual Basic.
-* **SMB & Core Infrastructure:** Extensive early experience directing IT operations, managing 24/7 server environments, dialing systems, and foundational network planning for small-to-medium businesses.
-* **Public Sector & RF Integration:** Hands-on electronic maintenance for municipal infrastructure, encompassing UHF radio network installation, custom electrical control systems, and heavy data communication cabling.
-* **Corporate Enterprise Security:** Acted as the primary security authority for a multi-entity corporate structure. Architected security infrastructure, managed third-party audits, and developed custom PowerShell automation for complex disaster recovery sequences across virtualization clusters.
-* **Federal Scale & Compliance:** Managed compliance, patching, and vulnerability remediation across an infrastructure exceeding 6,000 endpoints within a highly regulated federal healthcare environment. Developed custom scripting to force Active Directory alignment and filter false positives from massive Nessus scan datasets.
-* **Multinational Hardening & Migration:** Executed major architectural shifts for multinational operations and legal firms. This includes datacenter migrations to hosted solutions, hybrid Office 365 implementations, enterprise backup replication (Veeam/Unitrends), and resolving deeply entrenched AD/DNS misconfigurations.
+*Scale and context of enterprise experience, maintaining organizational anonymity.*
+
+* **Federal Scale & Compliance:** Directed vulnerability remediation and patching for 6,000+ endpoints in a highly regulated federal healthcare environment. Developed custom PowerShell automation for Active Directory alignment and large-scale Nessus dataset filtering.
+* **Corporate Information Security:** Primary security authority for multi-entity corporate structures. Managed third-party audits, authored SDLC/Vendor policies, and architected disaster recovery sequences across virtualization clusters (VMware/Hyper-V).
+* **Multinational Infrastructure:** Orchestrated datacenter-to-cloud migrations, Office 365 hybrid deployments, and enterprise-wide backup replication (Veeam/Unitrends). Remedied deep-seated architectural misconfigurations in global AD/DNS environments.
+* **Public Sector & RF Integration:** Managed municipal electronic infrastructure, including UHF radio network deployment, custom DC electrical control systems, and high-volume data communication cabling.
+* **SMB IT Leadership:** Directed IT operations and server infrastructure for small-to-medium businesses, managing 24/7 continuity, network planning, and foundational physical security.
+* **Foundational Training:** AAS in Computer Networking Systems (GPA: 3.9) with dedicated early training in C, C++, Java, and Visual Basic.
 
 ## 3. Engineering Philosophy
 * **Security-First Architecture:** Integrates adversarial threat modeling and privacy-by-default planning into the foundational stage of every project. Security is never treated as a perimeter add-on, but as an inherent, bare-metal property of the system's core design.
