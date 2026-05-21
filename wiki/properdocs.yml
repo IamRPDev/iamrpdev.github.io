@@ -1,0 +1,49 @@
+site_name: RPDev | Security Analyst & Engineer
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+    scheme: slate
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.highlight
+    - search.share
+
+extra_css:
+  - assets/css/theme.css
+
+plugins:
+  - search
+  - gen-files:
+      scripts:
+        - scripts/gen_profile.py
+  - mkdocstrings
+  - redirects:
+      redirect_maps: {}
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Security: security.md
+  - DevOps: devops.md
+  - Hardware: hardware.md
+  - Projects: projects.md
+  - Automated Profile: automated_profile.md
+
+exclude_docs: |
+  private/*
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details

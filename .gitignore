@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+
+# Tooling
+.understand-anything/
+
+# Private/Local
+.source/
+public_static/
+archive_versions/
+hugo_main.iamrpdev.github.io/
+mkdocs_wiki.iamrpdev.github.io/
+wiki/docs/private/
+
+# MkDocs / ProperDocs Build Output
+wiki/site/
