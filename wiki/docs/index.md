@@ -18,13 +18,13 @@
 
 ### Professional Experience
 
-- **Systems Administrator | Clunk, Hoose Co., LPA & Q Holding, Co.** *(2020 – 2021)*
+- **Systems Administrator | Corporate Legal Firm & Multinational Corporate Structure** *(2020 – 2021)*
   Architected major infrastructure transitions including datacenter to hosted migrations, Office 365 hybrid implementations, and cross-site backup replication (Veeam/Unitrends). Hardened multinational infrastructures and remediated deep-seated AD/DNS configurations.
   
-- **Senior Systems Administrator & Network Security Analyst | ASM Research / Veterans Health Administration** *(2017 – 2020)*
+- **Senior Systems Administrator & Network Security Analyst | Federal Healthcare Environment** *(2017 – 2020)*
   Directed compliance and vulnerability remediation for a 6,000+ endpoint federal environment. Developed extensive PowerShell automation to filter Nessus scan datasets, manage SCCM, and enforce strict government security baselines across multiple geographic locations.
 
-- **Information Security Officer | The JDC Family of Companies** *(2011 – 2017)*
+- **Information Security Officer | Multi-Entity Corporate Structure** *(2011 – 2017)*
   Served as the primary security authority, designing production architectures and managing disaster recovery/business continuity. Authored comprehensive enterprise IT policies (SDLC, Vendor Security, Removable Media) and successfully navigated third-party information security audits.
 
 - **IT Director & Electronic Technician | Municipal & SMB Environments** *(2003 – 2011)*
