@@ -13,3 +13,6 @@ A cross-disciplinary synthesis of Security Analyst, Systems Administrator, and H
 
 !!! tip "Systems & Protocols"
     Proficient across Windows/Linux architectures, SAN environments (EqualLogic, EMC VNX), and a veteran of early programming paradigms (C, C++, Java, Visual Basic).
+
+!!! abstract "Conceptual & Human Leadership"
+    Experienced Technical Team Lead capable of directing geographically dispersed technicians and managing vendor relationships (MSA negotiations, Cloud Services integration). Proven ability to author complex, business-aligned IT policies, including Software Development Life Cycle (SDLC), Pandemic/Disaster Recovery plans, Vendor Security, and exhaustive Business Impact Analyses (BIA).

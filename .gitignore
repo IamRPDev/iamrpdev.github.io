@@ -6,7 +6,8 @@ __pycache__/
 .understand-anything/
 
 # Private/Local
-.source/
+.source/*
+!.source/USERPROFILE_RPDev.md
 public_static/
 archive_versions/
 hugo_main.iamrpdev.github.io/
