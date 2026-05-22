@@ -27,7 +27,6 @@ plugins:
   - gen-files:
       scripts:
         - scripts/gen_profile.py
-        - scripts/gen_skill_matrix.py
   - mkdocstrings:
       handlers:
         python:

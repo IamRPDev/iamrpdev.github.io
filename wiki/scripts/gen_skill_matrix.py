@@ -1,4 +1,4 @@
-import mkdocs_gen_files
+import os
 
 def generate_matrix():
     # Define skills and levels (1-5)
@@ -35,8 +35,13 @@ def generate_matrix():
 
     svg += '</svg>'
 
-    with mkdocs_gen_files.open("assets/skill_matrix.svg", "w") as f:
+    # Physical path
+    output_path = os.path.join(os.path.dirname(__file__), "../docs/assets/skill_matrix.svg")
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    
+    with open(output_path, "w") as f:
         f.write(svg)
+    print(f"Generated Skill Matrix at {output_path}")
 
 if __name__ == "__main__":
     generate_matrix()
