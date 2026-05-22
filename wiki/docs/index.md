@@ -7,10 +7,10 @@
 !!! abstract "Executive Summary"
     Cross-disciplinary synthesis of Security Analyst, Systems Administrator, and Hardware Technician with over two decades of applied experience across federal, municipal, and multinational corporate environments.
 
-{% include-markdown "shortcodes/build_status.html" %}
+--8<-- "docs/shortcodes/build_status.html"
 
 <div class="terminal-block">
-  {% include-markdown "shortcodes/terminal.html" %}
+--8<-- "docs/shortcodes/terminal.html"
 </div>
 
 ---
