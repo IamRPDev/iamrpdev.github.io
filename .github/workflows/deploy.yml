@@ -30,7 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install properdocs mkdocs-material mkdocs-gen-files mkdocstrings[python] mkdocs-redirects
+          pip install properdocs mkdocs-material mkdocs-gen-files mkdocstrings[python] mkdocs-redirects mkdocs-minify-plugin
 
       - name: Update build status
         run: python .github/scripts/update_build_status.py
