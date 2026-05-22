@@ -8,10 +8,7 @@
     Cross-disciplinary synthesis of Security Analyst, Systems Administrator, and Hardware Technician with over two decades of applied experience across federal, municipal, and multinational corporate environments.
 
 <div class="terminal-block">
-<span class="terminal-prompt">root@RPDev:~#</span> cat /sys/philosophy<br>
-> <strong>Security-First Architecture:</strong> Inherent, bare-metal design.<br>
-> <strong>Dismantle and Rebuild:</strong> Understanding core mechanics to exploit and harden.<br>
-> <strong>First-Principles Efficiency:</strong> Sovereign, self-hosted environments.
+  {% include-markdown "shortcodes/terminal.html" %}
 </div>
 
 ---

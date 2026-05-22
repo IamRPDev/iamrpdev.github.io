@@ -1,0 +1,19 @@
+#rpdev-terminal {
+    background: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    border: 1px solid #333;
+    height: 200px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+.prompt { color: #ff0; }
+#term-input {
+    background: transparent;
+    border: none;
+    color: #0f0;
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+}

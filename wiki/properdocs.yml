@@ -17,6 +17,10 @@ theme:
 
 extra_css:
   - assets/css/theme.css
+  - assets/css/terminal.css
+
+extra_javascript:
+  - assets/js/terminal.js
 
 plugins:
   - search
