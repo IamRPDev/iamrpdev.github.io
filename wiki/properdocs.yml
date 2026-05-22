@@ -32,7 +32,7 @@ plugins:
       handlers:
         python:
           paths: [scripts]
-  - mkdocs-minify-plugin:
+  - minify:
       minify_html: true
   - redirects:
       redirect_maps: {}
