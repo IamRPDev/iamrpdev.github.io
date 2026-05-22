@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             const cmd = input.value.trim().toLowerCase();
-            output.innerHTML += `<div><span class="prompt">root@RPDev:~#</span> ${input.value}</div>`;
+            output.innerHTML += `<div class="terminal-line"><span class="prompt">root@RPDev:~#</span> <span>${input.value}</span></div>`;
             
             if (cmd === 'clear') {
                 output.innerHTML = '';
