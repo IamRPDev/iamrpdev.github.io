@@ -23,7 +23,12 @@ plugins:
   - gen-files:
       scripts:
         - scripts/gen_profile.py
-  - mkdocstrings
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [scripts]
+  - mkdocs-minify-plugin:
+      minify_html: true
   - redirects:
       redirect_maps: {}
 
@@ -44,9 +49,6 @@ nav:
     - OpenWRT Projects: projects/openwrt.md
   - Automated Profile: automated_profile.md
 
-exclude_docs: |
-  private/*
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -55,5 +57,11 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - attr_list
+  - def_list
