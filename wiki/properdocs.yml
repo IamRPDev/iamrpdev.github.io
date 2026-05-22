@@ -9,6 +9,8 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.indexes
+    - toc.integrate
     - content.code.copy
     - search.highlight
     - search.share
