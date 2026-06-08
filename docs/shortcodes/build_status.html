@@ -1,0 +1,23 @@
+<div class="terminal-block" style="border-color: #00ff00; margin-top: 10px;">
+    <span class="terminal-prompt">root@RPDev:~#</span> sys-status --live<br>
+    <div id="build-dashboard" style="font-size: 0.9em; padding-left: 15px;">
+        > [LOADING SYSTEM METRICS...]
+    </div>
+</div>
+
+<script>
+fetch('assets/build_status.json')
+    .then(response => response.json())
+    .then(data => {
+        const dashboard = document.getElementById('build-dashboard');
+        dashboard.innerHTML = `
+            > STATUS: <span style="color: #0f0;">${data.status}</span><br>
+            > LAST_BUILD: ${data.last_build}<br>
+            > VERSION: ${data.version}<br>
+            > ENV: ${data.environment}
+        `;
+    })
+    .catch(err => {
+        console.error('Build dashboard error:', err);
+    });
+</script>

@@ -1,0 +1,175 @@
+site_name: RPDev | Security Analyst & Engineer
+site_url: https://iamrpdev.github.io/
+site_author: RPDev
+site_description: Security Analyst, Engineer, and Hardware Hacker.
+
+repo_name: IamRPDev/iamrpdev.github.io
+repo_url: https://github.com/IamRPDev/iamrpdev.github.io
+edit_uri: edit/main/docs/
+
+theme:
+  name: materialx
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - toc.integrate
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - assets/css/theme.css
+  - assets/css/terminal.css
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [scripts]
+  - redirects:
+      redirect_maps: {}
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Professional Expertise:
+      - Enterprise Security: experience/security.md
+      - Infrastructure & RF: experience/infrastructure.md
+      - Technical Training: experience/training.md
+      - Retro-Computing: experience/retro.md
+  - Technical Documentation:
+      - Security: security.md
+      - DevOps: devops.md
+      - Hardware: hardware.md
+  - Projects:
+      - Overview: projects.md
+      - OpenWRT Projects: projects/openwrt.md
+  - Substrate (Chezmoi):
+      - Overview: chezmoi/index.md
+      - Changelog: chezmoi/modifications.md
+      - Commands:
+          - Add: chezmoi/commands/add.md
+          - Apply: chezmoi/commands/apply.md
+          - Age: chezmoi/commands/age.md
+          - Age Keygen: chezmoi/commands/age-keygen.md
+          - Archive: chezmoi/commands/archive.md
+          - Cat Config: chezmoi/commands/cat-config.md
+          - Cat: chezmoi/commands/cat.md
+          - Cd: chezmoi/commands/cd.md
+          - Chattr: chezmoi/commands/chattr.md
+          - Completion: chezmoi/commands/completion.md
+          - Data: chezmoi/commands/data.md
+          - Decrypt: chezmoi/commands/decrypt.md
+          - Destroy: chezmoi/commands/destroy.md
+          - Diff: chezmoi/commands/diff.md
+          - Docker: chezmoi/commands/docker.md
+          - Doctor: chezmoi/commands/doctor.md
+          - Dump Config: chezmoi/commands/dump-config.md
+          - Dump: chezmoi/commands/dump.md
+          - Edit Config Template: chezmoi/commands/edit-config-template.md
+          - Edit Config: chezmoi/commands/edit-config.md
+          - Edit Encrypted: chezmoi/commands/edit-encrypted.md
+          - Edit: chezmoi/commands/edit.md
+          - Encrypt: chezmoi/commands/encrypt.md
+          - Execute Template: chezmoi/commands/execute-template.md
+          - Forget: chezmoi/commands/forget.md
+          - Generate: chezmoi/commands/generate.md
+          - Git: chezmoi/commands/git.md
+          - Help: chezmoi/commands/help.md
+          - Ignored: chezmoi/commands/ignored.md
+          - Import: chezmoi/commands/import.md
+          - Init: chezmoi/commands/init.md
+          - License: chezmoi/commands/license.md
+          - List: chezmoi/commands/list.md
+          - Manage: chezmoi/commands/manage.md
+          - Managed: chezmoi/commands/managed.md
+          - Merge All: chezmoi/commands/merge-all.md
+          - Merge: chezmoi/commands/merge.md
+          - Podman: chezmoi/commands/podman.md
+          - Purge: chezmoi/commands/purge.md
+          - Re Add: chezmoi/commands/re-add.md
+          - Remove: chezmoi/commands/remove.md
+          - Rm: chezmoi/commands/rm.md
+          - Secret: chezmoi/commands/secret.md
+          - Source Path: chezmoi/commands/source-path.md
+          - Ssh: chezmoi/commands/ssh.md
+          - State: chezmoi/commands/state.md
+          - Status: chezmoi/commands/status.md
+          - Target Path: chezmoi/commands/target-path.md
+          - Unmanage: chezmoi/commands/unmanage.md
+          - Unmanaged: chezmoi/commands/unmanaged.md
+          - Update: chezmoi/commands/update.md
+          - Upgrade: chezmoi/commands/upgrade.md
+          - Verify: chezmoi/commands/verify.md
+      - Configuration:
+          - Editor: chezmoi/configuration/editor.md
+          - Hooks: chezmoi/configuration/hooks.md
+          - Index: chezmoi/configuration/index.md
+          - Interpreters: chezmoi/configuration/interpreters.md
+          - Pinentry: chezmoi/configuration/pinentry.md
+          - Textconv: chezmoi/configuration/textconv.md
+          - Umask: chezmoi/configuration/umask.md
+          - Variables: chezmoi/configuration/variables.md
+          - Warnings: chezmoi/configuration/warnings.md
+      - Core Concepts:
+          - Application Order: chezmoi/core-concepts/application-order.md
+          - Index: chezmoi/core-concepts/index.md
+          - Source State Attributes: chezmoi/core-concepts/source-state-attributes.md
+          - Target Types: chezmoi/core-concepts/target-types.md
+      - Special Directories:
+          - Chezmoidata: chezmoi/special-directories/chezmoidata.md
+          - Chezmoiexternals: chezmoi/special-directories/chezmoiexternals.md
+          - Chezmoiscripts: chezmoi/special-directories/chezmoiscripts.md
+          - Chezmoitemplates: chezmoi/special-directories/chezmoitemplates.md
+          - Index: chezmoi/special-directories/index.md
+      - Special Files:
+          - Chezmoi Format Tmpl: chezmoi/special-files/chezmoi-format-tmpl.md
+          - Chezmoidata Format: chezmoi/special-files/chezmoidata-format.md
+          - Chezmoiexternal Format: chezmoi/special-files/chezmoiexternal-format.md
+          - Chezmoiignore: chezmoi/special-files/chezmoiignore.md
+          - Chezmoiremove: chezmoi/special-files/chezmoiremove.md
+          - Chezmoiroot: chezmoi/special-files/chezmoiroot.md
+          - Chezmoiversion: chezmoi/special-files/chezmoiversion.md
+          - Index: chezmoi/special-files/index.md
+      - Templating:
+          - Directives: chezmoi/templating/directives.md
+          - Functions: chezmoi/templating/functions.md
+          - Github Functions: chezmoi/templating/github-functions.md
+          - Init Functions: chezmoi/templating/init-functions.md
+          - Index: chezmoi/templating/index.md
+          - Variables: chezmoi/templating/variables.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - attr_list
+  - def_list
