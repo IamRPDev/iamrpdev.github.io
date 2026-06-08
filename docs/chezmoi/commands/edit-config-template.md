@@ -1,21 +1,9 @@
-# Edit Config Template
 
-Documentation for edit-config-template in the Substrate environment.
+# edit-config-template
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Edit the configuration file template. If no configuration file template exists,
+then a new one is created with the contents of the current config file.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Examples
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
 chezmoi edit-config-template
-```
-</div>

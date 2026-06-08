@@ -1,21 +1,152 @@
-# Add
 
-Documentation for add in the Substrate environment.
+# add target...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Add targets to the source state. If any target is already in the source
+state, then its source state is replaced with its current state in the
+destination directory.
 
-AI-driven semantic commits via `cz-commit` as a post-add hook.
+## Flags
 
-</div>
+### -a, --autotemplate
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Automatically generate a template by replacing strings that match variable
+values from the data section of the config file with their respective config
+names as a template string. Longer substitutions occur before shorter ones.
+This implies the --template option.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Warning
+--autotemplate uses a greedy algorithm which occasionally generates
+templates with unwanted variable substitutions. Carefully review any
+templates it generates.
 
-<div class="terminal-block">
-```bash
-chezmoi add
-```
-</div>
+### --create
+
+Add files that should exist, irrespective of their contents.
+
+Sets the create_ source state attribute on the added file.
+
+A file will be created with the given contents if the file does not exist.
+If the file already exists, then its contents will not be changed.
+This allows for managing files with an initial state but should not be changed
+by chezmoi afterwards.
+
+### --encrypt
+
+Configuration: add.encrypt
+
+Encrypt files using the defined encryption method.
+
+### --exact
+
+Set the exact attribute on added directories.
+
+Warning
+Directories with the exact attributes are statefully synced between target and source directories.
+When running re-add, any files deleted from the exact target directory will be removed from the source directory.
+Likewise, any files added to the exact target directory, will be added to the source directory
+
+### --follow
+
+If the last part of a target is a symlink, add the target of the symlink
+instead of the symlink itself.
+
+### --new
+
+Create a new file if the target does not exist.
+
+### -p, --prompt
+
+Interactively prompt before adding each file.
+
+### -q, --quiet
+
+Suppress warnings about adding ignored entries.
+
+### --secrets ignore|warning|error
+
+Configuration: add.secrets
+
+Action to take when a secret is found when adding a file. The default is
+warning.
+
+### -T, --template
+
+Set the template attribute on added files and symlinks.
+
+### --template-symlinks
+
+Configuration: add.templateSymlinks
+
+When adding symlink to an absolute path in the source directory or destination
+directory, create a symlink template with .chezmoi.sourceDir or
+.chezmoi.homeDir. This is useful for creating portable absolute symlinks.
+
+## Common flags
+
+### -x, --exclude types
+markdownlint-disable first-line-heading
+Exclude target state entries of specific types. The default is
+none.
+
+Types can be explicitly included with the --include flag.
+
+Example
+--exclude=scripts will cause the command to not run scripts and
+--exclude=encrypted will exclude encrypted files.
+
+### -f, --force
+
+Add targets, even if doing so would cause a source template to be
+overwritten.
+
+### -i, --include types
+markdownlint-disable first-line-heading
+Include target state entries of specific types. The default is all.
+
+Types can be explicitly excluded with the --exclude flag.
+
+Example
+--include=files specifies all files.
+
+### -r, --recursive
+
+Recurse into subdirectories.
+Enabled by default. Can be disabled with --recursive=false.
+
+## Examples
+
+chezmoi add ~/.bashrc
+chezmoi add ~/.gitconfig --template
+chezmoi add ~/.ssh/id_rsa --encrypt
+chezmoi add ~/.vim --recursive
+chezmoi add ~/.oh-my-zsh --exact --recursive
+
+## Notes
+
+Bug
+chezmoi add will fail if the entry being added is in a directory
+implicitly created by an external. See issue #1574
+for details.
+
+Warning
+chezmoi add --exact --recursive DIR works in predictable but surprising
+ways and its use is not recommended for nested directories without taking
+precautions.
+If you have not previously added any files from ~/.config to chezmoi and
+run chezmoi add --exact --recursive ~/.config/nvim, chezmoi will consider
+all files under ~/.config to be managed, and any file not in
+~/.config/nvim will be removed on your next chezmoi apply. This is
+because ~/.config/nvim is added as:
+exact_dot_config/
+    exact_nvim/
+      exact_lua/
+        …
+      …
+
+To prevent this, add a .keep file first before adding the subdirectory
+recursively.
+touch ~/.config/.keep
+chezmoi add ~/.config/.keep
+chezmoi add --recursive --exact ~/.config/nvim
+
+See issue #4223 for details.

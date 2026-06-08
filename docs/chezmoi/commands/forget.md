@@ -1,21 +1,9 @@
-# Forget
 
-Documentation for forget in the Substrate environment.
+# forget target...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Remove targets from the source state, i.e. stop managing them. targets must
+have entries in the source state. They cannot be externals.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Examples
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi forget
-```
-</div>
+chezmoi forget ~/.bashrc

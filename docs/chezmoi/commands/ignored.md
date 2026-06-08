@@ -1,21 +1,18 @@
-# Ignored
 
-Documentation for ignored in the Substrate environment.
+# ignored
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Print the list of entries ignored by chezmoi.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Common flags
 
-</div>
+### -0, --nul-path-separator
+markdownlint-disable first-line-heading
+Separate paths with the NUL character instead of a newline.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### -t, --tree
+markdownlint-disable first-line-heading
+Print paths as a tree instead of a list.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+## Examples
 
-<div class="terminal-block">
-```bash
 chezmoi ignored
-```
-</div>

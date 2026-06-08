@@ -1,21 +1,14 @@
-# Git
 
-Documentation for git in the Substrate environment.
+# git [arg...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Run git args in the working tree (typically the source directory).
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+Note
+Flags in args must occur after -- to prevent chezmoi from interpreting
+them.
 
-</div>
+## Examples
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi git
-```
-</div>
+chezmoi git add .
+chezmoi git add dot_gitconfig
+chezmoi git -- commit -m "Add .gitconfig"

@@ -1,21 +1,6 @@
-# Decrypt
 
-Documentation for decrypt in the Substrate environment.
+# decrypt [file...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi decrypt
-```
-</div>
+Decrypt files using chezmoi's configured encryption. If no files are given,
+decrypt the standard input. The decrypted result is written to the standard
+output or a file if the --output flag is set.

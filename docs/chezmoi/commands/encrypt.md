@@ -1,21 +1,6 @@
-# Encrypt
 
-Documentation for encrypt in the Substrate environment.
+# encrypt [file...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi encrypt
-```
-</div>
+Encrypt files using chezmoi's configured encryption. If no files are given,
+encrypt the standard input. The encrypted result is written to the standard
+output or a file if the --output flag is set.

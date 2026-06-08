@@ -1,21 +1,23 @@
-# Index
 
-Documentation for index in the Substrate environment.
+# Concepts
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+chezmoi computes the target state for the current machine and then updates the
+destination directory, where:
+- The destination directory is the directory that chezmoi manages, usually
+  your home directory, ~.
+- A target is a file, directory, or symlink in the destination directory.
+- The destination state is the current state of all the targets in the
+  destination directory.
+- The source state declares the desired state of your home directory,
+  including templates that use machine-specific data. It contains only regular
+  files and directories.
+- The source directory is where chezmoi stores the source state. By default
+  it is ~/.local/share/chezmoi.
+- The config file contains machine-specific data. By default it is
+  ~/.config/chezmoi/chezmoi.toml.
+- The target state is the desired state of the destination directory. It is
+  computed from the source state, the config file, and the destination state.
+  The target state includes regular files and directories, and may also include
+  symbolic links, scripts to be run, and targets to be removed.
+- The working tree is the git working tree. Normally it is the same as the
+  source directory, but can be a parent of the source directory.

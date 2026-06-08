@@ -1,21 +1,21 @@
-# Age Keygen
 
-Documentation for age-keygen in the Substrate environment.
+# age-keygen [identity-file]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Generate an age identity or convert an age identity to an age recipient.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Flags
 
-</div>
+### --pq
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Generate a post-quantum key pair.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+### -y, --convert
 
-<div class="terminal-block">
-```bash
+Read an identity file identity-file or the standard input and print its
+recipient instead of generating an age identity.
+
+## Examples
+
 chezmoi age-keygen
-```
-</div>
+chezmoi age-keygen -o identity.txt
+chezmoi age-keygen -y identity.txt

@@ -1,21 +1,16 @@
-# Textconv
 
-Documentation for textconv in the Substrate environment.
+# textconv
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+A section called textconv in the configuration file controls how file contents
+are modified before being passed to diff.
 
-Secure SQLite diffing via `textconv-sqlite` for browser/extension state.
+The textconv must contain an array of objects where each object has the
+following properties:
+NameTypeDescription`pattern`stringTarget path pattern to match`command`stringCommand to transform contents`args`[]stringExtra arguments to command
+Files whose target path matches pattern are transformed by passing them to the
+standard input of command with args, and new contents are read from the
+command's standard output.
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+If a target path does not match any patterns then the file contents are passed
+unchanged to diff. If a target path matches multiple patterns then element with
+the longest pattern is used.

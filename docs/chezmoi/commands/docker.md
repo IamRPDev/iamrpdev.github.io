@@ -1,21 +1,48 @@
-# Docker
 
-Documentation for docker in the Substrate environment.
+# docker
+markdownlint-disable no-duplicate-heading
+Warning
+docker is an experimental command.
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Hint
+To use podman instead of Docker, set the
+docker.command configuration variable to podman. You can also
+use the chezmoi podman command instead of
+chezmoi docker.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+Install chezmoi, run chezmoi init --apply, and optionally execute your shell
+in Docker containers.
 
-</div>
+## Subcommands
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### exec container-id init-args...
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Install chezmoi, run chezmoi init --apply *init-args*, and execute your shell
+in the existing Docker container container-id.
+Flags`-i`,`--interactive`
+Keep stdin open even if not attached.
+`-p`,`--package-manager`package-manager
+Install chezmoi using package-manager, if possible. Valid values for
+package-manager include apk, apt-get, brew, dnf, nix-env, pacman,
+port, pkg, rpm, snap, xbps-install, and zypper. Otherwise, fall back
+to curl or wget installation. If neither curl nor wget are installed
+then install them with package-manager.
+`-s`,`--shell`
+After installing chezmoi, initializing your dotfiles, execute your shell. This
+is the default.
 
-<div class="terminal-block">
-```bash
-chezmoi docker
-```
-</div>
+### run image-id init-args...
+
+Create a new Docker container using image-id, and in it, install chezmoi, run
+chezmoi init --apply *init-args*, and execute your shell.
+Flags`-p`,`--package-manager`package-manager
+Install chezmoi using package-manager, if possible. Valid values for
+package-manager include apk, apt-get, brew, dnf, nix-env, pacman,
+port, pkg, rpm, snap, xbps-install, and zypper. Otherwise, fall back
+to curl or wget installation. If neither curl nor wget are installed
+then install them with package-manager.
+
+## Examples
+
+chezmoi docker exec $CONTAINER_ID $GITHUB_USERNAME
+chezmoi docker run -p apk alpine:latest $GITHUB_USERNAME

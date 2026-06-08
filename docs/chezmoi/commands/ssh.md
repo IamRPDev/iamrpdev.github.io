@@ -1,21 +1,28 @@
-# Ssh
 
-Documentation for ssh in the Substrate environment.
+# ssh host init-args...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+SSH to host, install chezmoi, run chezmoi init --apply *init-args*, and
+executes your shell.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+Warning
+ssh is an experimental, potentially destructive, command.
 
-</div>
+## Flags
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### -p, --package-manager package-manager
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Install chezmoi using package-manager, if possible. Valid values for
+package-manager include apk, apt-get, brew, dnf, nix-env, pacman,
+port, pkg, rpm, snap, xbps-install, and zypper. Otherwise, fall back
+to curl or wget installation. If neither curl nor wget are installed
+then install them with package-manager.
 
-<div class="terminal-block">
-```bash
-chezmoi ssh
-```
-</div>
+### -s, --shell
+
+After installing chezmoi, initializing your dotfiles, execute your shell. This
+is the default.
+
+## Examples
+
+chezmoi ssh $HOSTNAME $GITHUB_USERNAME
+chezmoi ssh $HOSTNAME -- --one-shot $GITHUB_USERNAME

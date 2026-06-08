@@ -1,21 +1,32 @@
-# Source State Attributes
 
-Documentation for source-state-attributes in the Substrate environment.
+# Source state attributes
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+chezmoi stores the source state of files, symbolic links, and directories in
+regular files and directories in the source directory (~/.local/share/chezmoi
+by default). This location can be overridden with the -S flag or by giving a
+value for sourceDir in the configuration file. Directory targets are
+represented as directories in the source state. All other target types are
+represented as files in the source state. Some state is encoded in the source
+file names.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+Attributes can be changed by renaming the file in the source state or with the
+chattr command.
 
-</div>
+The following prefixes and suffixes are special, and are collectively referred
+to as "attributes":
+PrefixEffect`after_`Run script after updating the destination`before_`Run script before updating the destination`create_`Ensure that the file exists, and create it with contents if it does not`dot_`Rename to use a leading dot, e.g.`dot_foo`becomes`.foo``empty_`Ensure the file exists, even if is empty. By default, empty files are removed`encrypted_`Encrypt the file in the source state`external_`Ignore attributes in child entries`exact_`Remove anything not managed by chezmoi`executable_`Add executable permissions to the target file`literal_`Stop parsing prefix attributes`modify_`Treat the contents as a script that modifies an existing file`once_`Only run the script if its contents have not been run successfully before`onchange_`Only run the script if its contents have not been run successfully before with the same filename`private_`Remove all group and world permissions from the target file or directory`readonly_`Remove all write permissions from the target file or directory`remove_`Remove the file or symlink if it exists or the directory if it is empty`run_`Treat the contents as a script to run`symlink_`Create a symlink instead of a regular fileSuffixEffect`.literal`Stop parsing suffix attributes`.tmpl`Treat the contents of the source file as a template
+Different target types allow different prefixes and suffixes. The order of
+prefixes is important.
+Target typeSource typeAllowed prefixes in orderAllowed suffixesDirectoryDirectory`remove_`,`external_`,`exact_`,`private_`,`readonly_`,`dot_`noneRegular fileFile`encrypted_`,`private_`,`readonly_`,`empty_`,`executable_`,`dot_``.tmpl`Create fileFile`create_`,`encrypted_`,`private_`,`readonly_`,`empty_`,`executable_`,`dot_``.tmpl`Modify fileFile`modify_`,`encrypted_`,`private_`,`readonly_`,`executable_`,`dot_``.tmpl`Remove fileFile`remove_`,`dot_`noneScriptFile`run_`,`once_`or`onchange_`,`before_`or`after_``.tmpl`Symbolic linkFile`symlink_`,`dot_``.tmpl`
+The literal_ prefix and .literal suffix can appear anywhere and stop
+attribute parsing. This permits filenames that would otherwise conflict with
+chezmoi's attributes to be represented.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+In addition, if the source file is encrypted, the suffix .age (when age
+encryption is used) or .asc (when gpg encryption is used) is stripped. These
+suffixes can be overridden with the age.suffix and gpg.suffix configuration
+variables.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+chezmoi ignores all files and directories in the source directory that begin
+with a . with the exception of files and directories that begin with
+.chezmoi.

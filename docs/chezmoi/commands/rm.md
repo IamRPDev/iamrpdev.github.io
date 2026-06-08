@@ -1,21 +1,5 @@
-# Rm
 
-Documentation for rm in the Substrate environment.
+# rm
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi rm
-```
-</div>
+The rm command has been removed. Use the forget command or the
+destroy command instead.

@@ -1,21 +1,25 @@
+
 # Warnings
 
-Documentation for warnings in the Substrate environment.
+By default, chezmoi will warn you when it encounters potential problems. Some of
+these warnings can be suppressed by setting values in configuration file.
+VariableTypeDefaultDescription`configFileTemplateHasChanged`bool`true`Warn when the config file template has changed
+Example
+TOMLYAMLJSON
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+~/.config/chezmoi/chezmoi.toml[warnings]
+    configFileTemplateHasChanged = false
 
-</div>
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+~/.config/chezmoi/chezmoi.yamlwarnings:
+  configFileTemplateHasChanged: false
 
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+
+
+~/.config/chezmoi/chezmoi.json{
+    "warnings": {
+        "configFileTemplateHasChanged": false
+    }
+}

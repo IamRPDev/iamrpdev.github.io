@@ -1,21 +1,19 @@
-# Github Functions
 
-Documentation for github-functions in the Substrate environment.
+# GitHub functions
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+The gitHub* template functions return data from the GitHub API.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+By default, chezmoi makes anonymous GitHub API requests, which are subject to
+GitHub's rate limits (currently 60 requests per hour per source IP
+address). chezmoi caches results from identical GitHub API requests for the
+period defined in gitHub.refreshPeriod (default one minute).
 
-</div>
+If any of the environment variables $CHEZMOI_GITHUB_ACCESS_TOKEN,
+$GITHUB_ACCESS_TOKEN, or $GITHUB_TOKEN are found, then the first one found
+will be used to authenticate the GitHub API requests which have a higher rate
+limit (currently 5,000 requests per hour per user).
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+In practice, GitHub API rate limits are high enough chezmoi's caching of results
+mean that you should rarely need to set a token, unless you are sharing a source
+IP address with many other GitHub users. If needed, the GitHub documentation
+describes how to create a personal access token.

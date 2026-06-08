@@ -1,21 +1,44 @@
-# Index
 
-Documentation for index in the Substrate environment.
+# Templates
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+chezmoi executes templates using text/template. The result is
+treated differently depending on whether the target is a file or a symlink.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+If target is a file, then:
+- If the result is an empty string, then the file is removed.
+- Otherwise, the target file contents are result.
 
-</div>
+If the target is a symlink, then:
+- Leading and trailing whitespace are stripped from the result.
+- If the result is an empty string, then the symlink is removed.
+- Otherwise, the target symlink target is the result.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+chezmoi executes templates using text/template's missingkey=error option,
+which means that misspelled or missing keys will raise an error. This can be
+overridden by setting a list of options in the configuration file.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Hint
+For a full list of template options, see Template.Option.
 
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+Example
+TOMLYAMLJSON
+
+
+~/.config/chezmoi/chezmoi.toml[template]
+    options = ["missingkey=zero"]
+
+
+
+~/.config/chezmoi/chezmoi.yamltemplate:
+  options:
+  - missingkey=zero
+
+
+
+~/.config/chezmoi/chezmoi.json{
+    "template": {
+        "options": [
+            "missingkey=zero"
+        ]
+    }
+}

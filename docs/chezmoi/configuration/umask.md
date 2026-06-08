@@ -1,21 +1,26 @@
-# Umask
 
-Documentation for umask in the Substrate environment.
+# umask
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+By default, chezmoi uses your current umask as set by your operating system and
+shell. chezmoi only stores crude permissions in its source state, namely in the
+executable  and private attributes, corresponding to the umasks of 0o111
+and 0o077 respectively.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+For machine-specific control of umask, set the umask configuration variable in
+chezmoi's configuration file.
 
-</div>
+Example
+TOMLYAMLJSON
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+~/.config/chezmoi/chezmoi.tomlumask = 0o22
 
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+
+
+~/.config/chezmoi/chezmoi.yamlumask: 18
+
+
+
+~/.config/chezmoi/chezmoi.json{
+    "umask": 18
+}

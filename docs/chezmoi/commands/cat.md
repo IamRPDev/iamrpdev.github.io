@@ -1,21 +1,11 @@
-# Cat
 
-Documentation for cat in the Substrate environment.
+# cat target...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Write the target contents of targets to stdout. targets must be files,
+scripts, or symlinks. For files, the target file contents are written. For
+scripts, the script's contents are written. For symlinks, the target is
+written.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Examples
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi cat
-```
-</div>
+chezmoi cat ~/.bashrc

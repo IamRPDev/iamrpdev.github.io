@@ -1,21 +1,7 @@
-# Chezmoiremove
 
-Documentation for chezmoiremove in the Substrate environment.
+# .chezmoiremove{,.tmpl}
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+If a file called .chezmoiremove (with an optional .tmpl extension) exists in
+the source state then it is interpreted as a list of targets to remove.
+.chezmoiremove is interpreted as a template, whether or not it has a .tmpl
+extension.

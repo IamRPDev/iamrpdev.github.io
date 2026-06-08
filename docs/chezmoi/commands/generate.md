@@ -1,21 +1,10 @@
-# Generate
 
-Documentation for generate in the Substrate environment.
+# generate output
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Generates output for use with chezmoi. The currently supported outputs are:
+OutputDescription`git-commit-message`A git commit message, describing the changes to the source directory.`install.sh`An install script, suitable for use with GitHub Codespaces`install-init-shell.sh`A script which installs chezmoi, runs`chezmoi init`, and executes your shell
+## Examples
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi generate
-```
-</div>
+chezmoi generate install.sh > install.sh
+chezmoi git -- commit -m "$(chezmoi generate git-commit-message)"
+chezmoi generate install-init-shell.sh $GITHUB_USERNAME

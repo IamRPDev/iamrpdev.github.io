@@ -1,21 +1,22 @@
-# Chezmoitemplates
 
-Documentation for chezmoitemplates in the Substrate environment.
+# .chezmoitemplates/
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+If any directory called .chezmoitemplates/ exists in the source state, then
+all files in this directory are available as templates with a name equal to the
+relative path to the .chezmoitemplates/ directory.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+The template action or includeTemplate function can be
+used to include these templates in another template. The context value (.)
+must be set explicitly if needed, otherwise the template will be executed with
+nil context data.
 
-</div>
+Example
+Given:
+~/.local/share/chezmoi/.chezmoitemplates/foo{{ if true }}bar{{ end }}
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+~/.local/share/chezmoi/dot_file.tmpl{{ template "foo" . }}
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+The target state of .file will be bar.
 
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+While .chezmoitemplates/ directories can reside anywhere in the source state,
+it easiest to manage a single directory in the root of your source directory.

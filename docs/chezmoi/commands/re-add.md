@@ -1,21 +1,51 @@
-# Re Add
 
-Documentation for re-add in the Substrate environment.
+# re-add [target...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Re-add modified files in the target state, preserving any encrypted_
+attributes. chezmoi will not overwrite templates, and all entries that are not
+files are ignored. Directories are recursed into by default.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+If no targets are specified then all modified files are re-added. If one or
+more targets are given then only those targets are re-added.
 
-</div>
+## Common flags
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### -x, --exclude types
+markdownlint-disable first-line-heading
+Exclude target state entries of specific types. The default is
+none.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Types can be explicitly included with the --include flag.
 
-<div class="terminal-block">
-```bash
+Example
+--exclude=scripts will cause the command to not run scripts and
+--exclude=encrypted will exclude encrypted files.
+
+### -i, --include types
+markdownlint-disable first-line-heading
+Include target state entries of specific types. The default is all.
+
+Types can be explicitly excluded with the --exclude flag.
+
+Example
+--include=files specifies all files.
+
+### --re-encrypt
+
+Re-encrypt encrypted files.
+
+### -r, --recursive
+
+Recurse into subdirectories.
+Enabled by default. Can be disabled with --recursive=false.
+
+## Examples
+
 chezmoi re-add
-```
-</div>
+chezmoi re-add ~/.bashrc
+chezmoi re-add --recursive=false ~/.config/git
+
+## Notes
+
+Hint
+If you want to re-add a single file unconditionally, use chezmoi add --force instead.

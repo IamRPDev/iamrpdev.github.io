@@ -1,21 +1,24 @@
-# Cd
 
-Documentation for cd in the Substrate environment.
+# cd [path]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Launch a shell in the working tree (typically the source directory). chezmoi
+will launch the command set by the cd.command configuration variable with any
+extra arguments specified by cd.args. If this is not set, chezmoi will
+attempt to detect your shell and finally fall back to an OS-specific default.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+If the optional argument path is present, the shell will be launched in the
+source directory corresponding to path.
 
-</div>
+The shell will have various CHEZMOI* environment variables set, as for
+scripts.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Hint
+This does not change the current directory of the current shell. To do
+that, instead use:
+$ cd $(chezmoi source-path)
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+## Examples
 
-<div class="terminal-block">
-```bash
 chezmoi cd
-```
-</div>
+chezmoi cd ~
+chezmoi cd ~/.config

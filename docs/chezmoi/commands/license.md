@@ -1,21 +1,8 @@
-# License
 
-Documentation for license in the Substrate environment.
+# license
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Print chezmoi's license.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Examples
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
 chezmoi license
-```
-</div>

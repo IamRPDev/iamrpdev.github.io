@@ -1,21 +1,14 @@
-# Doctor
 
-Documentation for doctor in the Substrate environment.
+# doctor
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Check for potential problems.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Flags
 
-</div>
+### --no-network
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Do not use any network connections.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+## Examples
 
-<div class="terminal-block">
-```bash
 chezmoi doctor
-```
-</div>

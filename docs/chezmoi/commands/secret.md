@@ -1,21 +1,40 @@
-# Secret
 
-Documentation for secret in the Substrate environment.
+# secret
+markdownlint-disable no-duplicate-heading
+Verify chezmoi's integration with the system's keyring.
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+## Subcommands
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+### secret keyring delete
+`--service`string
+Name of the service.
+`--user`string
+Name of the user.
 
-</div>
+### secret keyring get
+`--service`string
+Name of the service.
+`--user`string
+Name of the user.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### secret keyring set
+`--service`string
+Name of the service.
+`--user`string
+Name of the user.
+`--value`string
+New value.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+## Examples
 
-<div class="terminal-block">
-```bash
-chezmoi secret
-```
-</div>
+chezmoi secret keyring set --service=service --user=user --value=password
+chezmoi secret keyring get --service=service --user=user
+chezmoi secret keyring delete --service=service --user=user
+
+## Notes
+
+Warning
+On FreeBSD, the secret keyring command is only available if chezmoi was
+compiled with cgo enabled. The official release binaries of chezmoi are
+not compiled with cgo enabled, and secret keyring command is not
+available.

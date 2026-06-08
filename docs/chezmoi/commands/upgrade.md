@@ -1,21 +1,31 @@
-# Upgrade
 
-Documentation for upgrade in the Substrate environment.
+# upgrade
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Upgrade chezmoi by downloading and installing the latest released version. This
+will call the GitHub API to determine if there is a new version of chezmoi
+available, and if so, download and attempt to install it in the same way as
+chezmoi was previously installed.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+If the any of the $CHEZMOI_GITHUB_ACCESS_TOKEN, $CHEZMOI_GITHUB_TOKEN,
+$GITHUB_ACCESS_TOKEN, or $GITHUB_TOKEN environment variables are set, then
+the first value found will be used to authenticate requests to the GitHub API,
+otherwise unauthenticated requests are used which are subject to stricter rate
+limiting. Unauthenticated requests should be sufficient for most cases.
 
-</div>
+Warning
+If you installed chezmoi using a package manager, the upgrade command
+might have been removed by the package maintainer.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+## Flags
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+### --executable filename
 
-<div class="terminal-block">
-```bash
-chezmoi upgrade
-```
-</div>
+Set name of executable to replace.
+
+### --method method
+
+Override the upgrade method that was automatically detected by chezmoi.
+
+Danger
+This flag should only be used when recommended by chezmoi developers.
+MethodsDescription`brew-upgrade`Run`brew upgrade chezmoi`.`replace-executable`Download the latest released executable from Github.`snap-refresh`Run`snap refresh chezmoi`.`sudo-upgrade-package`Same as`upgrade-package`but use`sudo`.`upgrade-package`Download and install`.apk`,`.deb`or`.rpm`package. Run`pacman`on Arch Linux.

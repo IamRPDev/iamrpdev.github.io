@@ -1,21 +1,12 @@
-# Edit Encrypted
 
-Documentation for edit-encrypted in the Substrate environment.
+# edit-encrypted filename...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Edit the encrypted files filenames.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+Each filename is decrypted to a temporary directory, the editor is invoked on
+the decrypted files. After the editor returns, each the decrypted file is
+re-encrypted.
 
-</div>
+## Examples
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi edit-encrypted
-```
-</div>
+chezmoi edit-encrypted encrypted_file

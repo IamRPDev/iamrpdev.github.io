@@ -1,21 +1,5 @@
-# Help
 
-Documentation for help in the Substrate environment.
+# help [command...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi help
-```
-</div>
+Print the help associated with command, or general help if no command is
+given.

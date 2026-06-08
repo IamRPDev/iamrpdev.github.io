@@ -1,21 +1,13 @@
-# Chezmoiversion
 
-Documentation for chezmoiversion in the Substrate environment.
+# .chezmoiversion
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+If a file called .chezmoiversion exists anywhere in the source directory (not
+just the source state), then its contents are interpreted as a semantic version
+defining the minimum version of chezmoi required to interpret the source state
+correctly. chezmoi will refuse to interpret the source state if the current
+version is too old.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+This file is evaluated before any operation.
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+Example
+~/.local/share/chezmoi/.chezmoiversion2.50.0

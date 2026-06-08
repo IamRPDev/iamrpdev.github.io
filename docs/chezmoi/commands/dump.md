@@ -1,21 +1,50 @@
-# Dump
 
-Documentation for dump in the Substrate environment.
+# dump [target...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Dump the target state of targets. If no targets are specified, then the
+entire target state.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Common flags
 
-</div>
+### -x, --exclude types
+markdownlint-disable first-line-heading
+Exclude target state entries of specific types. The default is
+none.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Types can be explicitly included with the --include flag.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Example
+--exclude=scripts will cause the command to not run scripts and
+--exclude=encrypted will exclude encrypted files.
 
-<div class="terminal-block">
-```bash
-chezmoi dump
-```
-</div>
+### -f, --format json|yaml
+markdownlint-disable first-line-heading
+Set the output format, json by default.
+
+### -i, --include types
+markdownlint-disable first-line-heading
+Include target state entries of specific types. The default is all.
+
+Types can be explicitly excluded with the --exclude flag.
+
+Example
+--include=files specifies all files.
+
+### --init
+markdownlint-disable first-line-heading
+Regenerate and reload the config file from its template before computing
+the target state.
+
+### -P, --parent-dirs
+markdownlint-disable first-line-heading
+Execute the command on target and all its parent directories.
+
+### -r, --recursive
+
+Recurse into subdirectories.
+Enabled by default. Can be disabled with --recursive=false.
+
+## Examples
+
+chezmoi dump ~/.bashrc
+chezmoi dump --format=yaml

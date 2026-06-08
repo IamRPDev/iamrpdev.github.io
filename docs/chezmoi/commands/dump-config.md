@@ -1,21 +1,14 @@
-# Dump Config
 
-Documentation for dump-config in the Substrate environment.
+# dump-config
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Dump the configuration.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Common flags
 
-</div>
+### -f, --format json|yaml
+markdownlint-disable first-line-heading
+Set the output format, json by default.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+## Examples
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
 chezmoi dump-config
-```
-</div>

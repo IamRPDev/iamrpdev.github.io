@@ -1,21 +1,22 @@
-# Purge
 
-Documentation for purge in the Substrate environment.
+# purge
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Remove chezmoi's configuration, state, and source directory, but leave the
+target state intact.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Flags
 
-</div>
+### -P, --binary
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Purge chezmoi binary.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+## Common flags
 
-<div class="terminal-block">
-```bash
+### --force
+
+Remove without prompting.
+
+## Examples
+
 chezmoi purge
-```
-</div>
+chezmoi purge --force

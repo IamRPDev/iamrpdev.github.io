@@ -1,21 +1,49 @@
-# Chezmoidata
 
-Documentation for chezmoidata in the Substrate environment.
+# .chezmoidata/
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+If any .chezmoidata/ directories exist in the source state, all files within
+them are interpreted as structured static data in the given formats. This data
+can then be used in templates. See also .chezmoidata.$FORMAT.
+markdownlint-disable first-line-heading
+Info
+chezmoi supports multiple file $FORMATs for configuration and data:
+JSON, JSONC, TOML, and YAML.
 
-UCH policy engine and federated infrastructure manifests.
+Info
+The files in the .chezmoidata directories all merge to the root of the
+data dictionary and are read in lexical (alphabetic) filesystem order. This
+applies both within .chezmoidata directories and between .chezmoidata
+directories.
+As an example, if I have a .chezmoidata directory in my dot_config
+source directory, the files within will be merged according to the sort
+order of the files:
+dot_config/.chezmoidata/zed.json{ "z": { "z": 3 } }
 
-</div>
+dot_config/.chezmoidata/alpha.jsonc{ "z": { "z": 4 } }
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+dot_config/.chezmoidata/beta.tomlz.x = 1
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+dot_config/.chezmoidata/gamma.yamlz:
+  y: 2
 
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+The output of chezmoi data will include the following merged z
+dictionary. Note that the value in .chezmoidata/zed.json overwrote the
+value in .chezmoidata/alpha.jsonc because of the lexical file sorting.
+{
+  "z": {
+    "x": 1,
+    "y": 2,
+    "z": 3
+  }
+}
+
+Only dictionaries are merged; all other values (in particular lists) are
+replaced.
+
+Warning
+Files in .chezmoidata directories cannot be templates because they must be
+present prior to the start of the template engine. Dynamic machine data
+should be set in the data section of .chezmoi.$FORMAT.tmpl.
+Dynamic environment data should be read from templates using the
+output, fromJson, fromYaml, or
+similar functions.

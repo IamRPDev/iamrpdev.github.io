@@ -1,21 +1,7 @@
-# Chezmoiscripts
 
-Documentation for chezmoiscripts in the Substrate environment.
+# .chezmoiscripts/
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+If a directory called .chezmoiscripts/ exists in the root of the source
+directory, then any scripts in it are executed as normal scripts without
+creating a corresponding directory in the target state. The run_ attribute is
+still required.

@@ -1,21 +1,10 @@
-# Target Path
 
-Documentation for target-path in the Substrate environment.
+# target-path [source-path...]
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Print the target path of each source path. If no source paths are specified then
+print the target directory.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Examples
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
 chezmoi target-path
-```
-</div>
+chezmoi target-path ~/.local/share/chezmoi/dot_zshrc

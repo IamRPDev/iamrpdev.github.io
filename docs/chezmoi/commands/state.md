@@ -1,21 +1,53 @@
-# State
 
-Documentation for state in the Substrate environment.
+# state
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Manipulate the persistent state.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+Hint
+To get a full list of subcommands run:
+$ chezmoi state help
 
-</div>
+## Subcommands
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### data
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Print the raw data in the persistent state.
 
-<div class="terminal-block">
-```bash
-chezmoi state
-```
-</div>
+### delete
+
+Delete a value from the persistent state.
+
+### delete-bucket
+
+Delete a bucket from the persistent state.
+
+### dump
+
+Generate a dump of the persistent state.
+
+### get
+
+Get a value from the persistent state.
+
+### get-bucket
+
+Get a bucket from the persistent state.
+
+### reset
+
+Reset the persistent state.
+
+### set
+
+Set a value from the persistent state
+
+## Examples
+
+chezmoi state data
+chezmoi state delete --bucket=$BUCKET --key=$KEY
+chezmoi state delete-bucket --bucket=$BUCKET
+chezmoi state dump
+chezmoi state get --bucket=$BUCKET --key=$KEY
+chezmoi state get-bucket --bucket=$BUCKET
+chezmoi state set --bucket=$BUCKET --key=$KEY --value=$VALUE
+chezmoi state reset

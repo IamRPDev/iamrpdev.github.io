@@ -1,21 +1,23 @@
-# Age
 
-Documentation for age in the Substrate environment.
+# age
+markdownlint-disable no-duplicate-heading
+Interact with age's passphrase-based encryption.
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+## Subcommands
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+### age encrypt [file...]
 
-</div>
+Encrypt file or standard input.
+`-p`,`--passphrase`
+Decrypt with a passphrase.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### age decrypt [file...]
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Decrypt file or standard input.
+`-p`,`--passphrase`
+Decrypt with a passphrase.
 
-<div class="terminal-block">
-```bash
-chezmoi age
-```
-</div>
+## Examples
+
+chezmoi age encrypt --passphrase plaintext.txt > ciphertext.txt
+chezmoi age decrypt --passphrase ciphertext.txt > decrypted-ciphertext.txt

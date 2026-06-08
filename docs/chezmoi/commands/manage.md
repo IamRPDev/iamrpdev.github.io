@@ -1,21 +1,4 @@
-# Manage
 
-Documentation for manage in the Substrate environment.
+# manage target...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi manage
-```
-</div>
+manage is an alias for add for symmetry with unmanage.

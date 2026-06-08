@@ -1,21 +1,11 @@
-# Chezmoiroot
 
-Documentation for chezmoiroot in the Substrate environment.
+# .chezmoiroot
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+If a file called .chezmoiroot exists in the root of the source directory then
+the source state is read from the directory specified in .chezmoiroot
+interpreted as a relative path to the source directory. .chezmoiroot is read
+before all other files in the source directory.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+Warning
+If you use this approach, you must move all other "source root" files such
+as .chezmoi.$FORMAT.tmpl into your new root.

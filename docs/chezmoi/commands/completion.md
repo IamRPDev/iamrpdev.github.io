@@ -1,21 +1,10 @@
-# Completion
 
-Documentation for completion in the Substrate environment.
+# completion shell
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Generate shell completion code for the specified shell (bash, fish,
+powershell, or zsh).
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Examples
 
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi completion
-```
-</div>
+chezmoi completion bash
+chezmoi completion fish --output=~/.config/fish/completions/chezmoi.fish

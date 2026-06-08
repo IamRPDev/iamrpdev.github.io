@@ -1,21 +1,35 @@
-# Pinentry
 
-Documentation for pinentry in the Substrate environment.
+# pinentry
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+By default, chezmoi will request passwords from the terminal.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+If the --no-tty option is passed, then chezmoi will instead read passwords
+from the standard input.
 
-</div>
+Otherwise, if the configuration variable pinentry.command is set then chezmoi
+will instead used the given command to read passwords, assuming that it follows
+the Assuan protocol (PDF) like GnuPG's pinentry. The
+configuration variable pinentry.args specifies extra arguments to be passed to
+pinentry.command and the configuration variable pinentry.options specifies
+extra options to be set. The default pinentry.options is
+["allow-external-password-cache"].
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Example
+TOMLYAMLJSON
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
 
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+~/.config/chezmoi/chezmoi.toml[pinentry]
+    command = "pinentry"
+
+
+
+~/.config/chezmoi/chezmoi.yamlpinentry:
+  command: pinentry
+
+
+
+~/.config/chezmoi/chezmoi.json{
+    "pinentry": {
+        "command": "pinentry"
+    }
+}

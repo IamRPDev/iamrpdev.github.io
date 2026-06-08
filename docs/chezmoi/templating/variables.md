@@ -1,21 +1,13 @@
+
 # Variables
 
-Documentation for variables in the Substrate environment.
-
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
-
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+chezmoi provides the following automatically-populated variables:
+VariableTypeValue`.chezmoi.arch`stringArchitecture, e.g.`amd64`,`arm`, etc. as returned byruntime.GOARCH`.chezmoi.args`[]stringThe arguments passed to the`chezmoi`command, starting with the program command`.chezmoi.cacheDir`stringThe cache directory`.chezmoi.config`objectThe configuration, as read from the config file`.chezmoi.configFile`stringThe path to the configuration file used by chezmoi`.chezmoi.destDir`stringThe destination directory`.chezmoi.executable`stringThe path to the`chezmoi`executable, if available`.chezmoi.flags`objectSelected flags passed to the`chezmoi`command`.chezmoi.fqdnHostname`stringThe fully-qualified domain name hostname of the machine chezmoi is running on`.chezmoi.gid`stringThe primary group ID`.chezmoi.group`stringThe group of the user running chezmoi`.chezmoi.homeDir`stringThe home directory of the user running chezmoi (with forward slashes as the path separator)`.chezmoi.hostname`stringThe hostname of the machine chezmoi is running on, up to the first`.``.chezmoi.kernel`objectContains information from`/proc/sys/kernel`. Linux only, useful for detecting specific kernels (e.g. Microsoft's WSL kernel)`.chezmoi.os`stringOperating system, e.g.`darwin`,`linux`, etc. as returned byruntime.GOOS`.chezmoi.osRelease`objectThe information from`/etc/os-release`, Linux only, run`chezmoi data`to see its output`.chezmoi.pathListSeparator`stringThe path list separator, typically`;`on Windows and`:`on other systems. Used to separate paths in environment variables. i.e.,`/bin:/sbin:/usr/bin``.chezmoi.pathSeparator`stringThe path separator, typically`\`on windows and`/`on unix. Used to separate files and directories in a path. i.e.,`c:\see\dos\run``.chezmoi.rawHomeDir`stringThe home directory of the user running chezmoi (with backslashes as the path separator on Windows)`.chezmoi.sourceDir`stringThe source directory`.chezmoi.sourceFile`stringThe path of the template relative to the source directory`.chezmoi.targetFile`stringThe absolute path of the target file for the template`.chezmoi.uid`stringThe user ID`.chezmoi.username`stringThe username of the user running chezmoi`.chezmoi.version.builtBy`stringThe program that built the`chezmoi`executable, if set`.chezmoi.version.commit`stringThe git commit at which the`chezmoi`executable was built, if set`.chezmoi.version.date`stringThe timestamp at which the`chezmoi`executable was built, if set`.chezmoi.version.version`stringThe version of chezmoi`.chezmoi.windowsVersion`objectWindows version information, if running on Windows`.chezmoi.workingTree`stringThe working tree of the source directory
+.chezmoi.windowsVersion contains the following keys populated from the
+registry key
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
+NT\CurrentVersion.
+KeyType`currentBuild`string`currentMajorVersionNumber`integer`currentMinorVersionNumber`integer`currentVersion`string`displayVersion`string`editionID`string`productName`string
+Additional variables can be defined in the config file in the data section.
+Variable names must consist of a letter and be followed by zero or more letters
+and/or digits.

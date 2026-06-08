@@ -1,21 +1,11 @@
-# Chezmoiexternals
 
-Documentation for chezmoiexternals in the Substrate environment.
+# .chezmoiexternals/
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+If any .chezmoiexternals/ directories exist in the source state, then all
+files in this directory are treated as .chezmoiexternal.<format>
+files relative to the source directory.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
-
-</div>
-
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
-
-Core component of the Substrate Digital Nervous System fleet orchestration.
-
-<div class="terminal-block">
-```bash
-chezmoi --help
-```
-</div>
+Warning
+.chezmoiexternals/ directories do not support externals for subdirectories
+within the .chezmoiexternals/ directories. See #4274 for
+details.

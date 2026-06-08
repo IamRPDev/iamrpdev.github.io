@@ -1,21 +1,21 @@
-# Merge All
 
-Documentation for merge-all in the Substrate environment.
+# merge-all
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Perform a three-way merge for file whose actual state does not match its target
+state. The merge is performed with chezmoi merge.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+## Common flags
 
-</div>
+### --init
+markdownlint-disable first-line-heading
+Regenerate and reload the config file from its template before computing
+the target state.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+### -r, --recursive
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+Recurse into subdirectories.
+Enabled by default. Can be disabled with --recursive=false.
 
-<div class="terminal-block">
-```bash
+## Examples
+
 chezmoi merge-all
-```
-</div>

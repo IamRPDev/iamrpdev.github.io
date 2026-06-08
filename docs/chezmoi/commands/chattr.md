@@ -1,21 +1,35 @@
-# Chattr
 
-Documentation for chattr in the Substrate environment.
+# chattr modifier target...
 
-<div class="admonition substrate-mod">
-<p class="admonition-title">Substrate Modifications</p>
+Change the attributes and/or type of targets. modifier specifies what to
+modify.
 
-Substrate utilizes standard Chezmoi behavior with UCH compliance enforcement.
+See attributes for a description of each attribute.
 
-</div>
+Add attributes by specifying them or their abbreviations directly, optionally
+prefixed with a plus sign (+). Remove attributes by prefixing them or their
+attributes with the string no or a minus sign (-). The available attribute
+modifiers and their abbreviations are:
+Attribute modifierAbbreviation`after``a``before``b``empty``e``encrypted`none`exact`none`executable``x``external`none`once``o``onchange`none`private``p``readonly``r``remove`none`template``t`
+The type of a target can be changed using a type modifier:
+Type modifier`create``modify``script``symlink`
+The negative form of type modifiers, e.g. nocreate, changes the target to be
+a regular file if it is of that type, otherwise the type is left unchanged.
 
-<div class="admonition substrate-app">
-<p class="admonition-title">Applications</p>
+Multiple modifications may be specified by separating them with a comma (,).
+If you use the -modifier form then you must put modifier after a -- to
+prevent chezmoi from interpreting -modifier as an option.
 
-Core component of the Substrate Digital Nervous System fleet orchestration.
+## Common flags
 
-<div class="terminal-block">
-```bash
-chezmoi chattr
-```
-</div>
+### -r, --recursive
+
+Recurse into subdirectories.
+
+## Examples
+
+chezmoi chattr template ~/.bashrc
+chezmoi chattr noempty ~/.profile
+chezmoi chattr private,template ~/.netrc
+chezmoi chattr -- -x ~/.zshrc
+chezmoi chattr +create,+private ~/.kube/config
