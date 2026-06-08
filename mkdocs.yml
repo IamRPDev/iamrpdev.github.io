@@ -65,6 +65,11 @@ nav:
   - Substrate (Chezmoi):
       - Overview: chezmoi/index.md
       - Changelog: chezmoi/modifications.md
+      - Command Line Flags:
+          - Index: chezmoi/command-line-flags/index.md
+          - Common: chezmoi/command-line-flags/common.md
+          - Developer: chezmoi/command-line-flags/developer.md
+          - Global: chezmoi/command-line-flags/global.md
       - Commands:
           - Add: chezmoi/commands/add.md
           - Apply: chezmoi/commands/apply.md
